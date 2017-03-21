@@ -71,27 +71,27 @@ class MenuItemAdmin extends Admin
      */
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper
-            ->add('title', null, array(
-                'label' => 'Titre',
-            ))
-            ->add('url', null, array(
-                'label' => 'Lien',
-            ))
-            ->add('active', null, array(
-                'label' => 'Activé',
-                'required' => false,
-            ))
-            ->add('target', 'choice', array(
-                'label' => 'Ouverture',
-                'choices_as_values' => true,
-                'translation_domain'=>$this->getTranslationDomain(),
-                'choices' => array(
-                    'menu.menu_item.same_window'=>'_self',
-                    'menu.menu_item.new_window'=>'_target',
-                ),
-            ))
-        ;
+      $formMapper
+          ->add('title', null, array(
+              'label' => 'menu.item.title',
+          ))
+          ->add('url', null, array(
+              'label' => 'menu.item.url',
+          ))
+          ->add('active', null, array(
+              'label' => 'menu.item.active',
+              'required' => false,
+          ))
+          ->add('target', 'choice', array(
+              'label' => 'menu.item.target',
+              'choices_as_values' => true,
+              'translation_domain'=>$this->getTranslationDomain(),
+              'choices' => array(
+                  'menu.menu_item.same_window'=>'_self',
+                  'menu.menu_item.new_window'=>'_target',
+              ),
+          ))
+      ;
     }
 
     /**
