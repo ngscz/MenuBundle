@@ -1,5 +1,5 @@
 {
-    "name": "id4v/menu-bundle",
+    "name": "ngscz/menu-bundle",
     "type": "symfony-bundle",
     "description": "Menu Bundle that allows you to create menus, and manage them easily with SonataAdminBundle",
     "keywords": ["Menu", "menu generator", "generator", "sonata", "admin"],
