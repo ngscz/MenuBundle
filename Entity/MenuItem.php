@@ -6,10 +6,12 @@ use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
- * MenuItem.
- *
+ * MenuItem.  
  * @ORM\Table("menu__menu_item")
  * @ORM\Entity(repositoryClass="Id4v\Bundle\MenuBundle\Entity\MenuItemRepository")
+ * @ORM\InheritanceType("SINGLE_TABLE")
+ * @ORM\DiscriminatorColumn(name="discr", type="string")
+ * @ORM\DiscriminatorMap({"basemenuitem" = "Id4v\Bundle\MenuBundle\Entity\MenuItem", "menuitem" = "Ngs\MenuBundle\Entity\MenuItem"})
  */
 class MenuItem
 {
@@ -20,7 +22,7 @@ class MenuItem
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string
